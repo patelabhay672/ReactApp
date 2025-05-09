@@ -1,6 +1,8 @@
+import { useState } from "react";
 
 const App = () => {
 
+  const [ username, setusername ] = useState("Abhay")
   const clickHandler = () => {
     alert('Hello, World!');
   }
@@ -8,9 +10,24 @@ const App = () => {
     alert(`Hello, World! ${name}`);
   }
 
+  const profile = [
+    { name: "Abhay", age: 32 },
+    { name: "devi", age: 21 },
+    { name: "Sita", age: 22 }
+  ]
+
+  const updatedprofile = profile.map((profile, index) => {
+    return (
+      <li>
+        <span>Name: {profile.name}</span><br></br>
+        <span>Age: {profile.age}</span>
+      </li>
+    )
+  })
+
   return (
     <div>
-      <h2>{5+3}</h2>
+      <h2>{5 + 3}</h2>
       <h1>My React App</h1>
       <h2>
         This is a simple React application that uses Vite for development and
@@ -18,6 +35,9 @@ const App = () => {
       </h2>
       <button onClick={clickHandler}>Click Me</button>
       <button onClick={() => clickHandler2('John')}>Click Me 2</button>
+      <ol>{updatedprofile}</ol>
+      <h2>{username}</h2>
+      <button onClick={()=>setusername("Aditya")}>change name</button>
     </div>
   );
 }
