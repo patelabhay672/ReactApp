@@ -25,6 +25,13 @@ const App = () => {
     )
   })
 
+  const [fullname,setfullname]=useState("")
+
+  const changehandler=(e)=>{
+    setfullname(e.target.value)
+  }
+  console.log(fullname)
+
   return (
     <div>
       <h2>{5 + 3}</h2>
@@ -38,6 +45,8 @@ const App = () => {
       <ol>{updatedprofile}</ol>
       <h2>{username}</h2>
       <button onClick={()=>setusername("Aditya")}>change name</button>
+
+      <input onChange={changehandler}  type="text" placeholder="fullname"/>
     </div>
   );
 }
