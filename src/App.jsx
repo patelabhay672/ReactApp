@@ -40,8 +40,12 @@ const App = () => {
     );
   };
 
+  const deleteAll = () => {
+    settodos([])
+  }
+
   const deleteTodo = (id) => {
-    settodos(todos.filter((todo) => todo.id !== id));
+    settodos(todos.filter((todo) => todo.id !== id));  //jo jo match nahi  karta hai  usko store  karo
   };
 
   return (
@@ -58,6 +62,7 @@ const App = () => {
         todos={todos}
         toggleCompleted={toggleCompleted}
         deleteTodo={deleteTodo}
+        deleteAll={deleteAll}
       />
     </div>
   );

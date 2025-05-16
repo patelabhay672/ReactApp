@@ -1,7 +1,9 @@
 import React from "react";
 
-const TodoItem = ({ todo, toggleCompleted, deleteTodo }) => {
+const TodoItem = ({ todo, toggleCompleted, deleteTodo ,deleteAll }) => {
   return (
+    <>
+    
     <li
       className="flex justify-between items-center bg-white p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition"
     >
@@ -31,6 +33,7 @@ const TodoItem = ({ todo, toggleCompleted, deleteTodo }) => {
         Delete
       </button>
     </li>
+    </>
   );
 };
 
