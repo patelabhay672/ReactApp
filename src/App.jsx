@@ -2,6 +2,7 @@ import { nanoid } from "nanoid/non-secure";
 import { useEffect, useState } from "react";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
+import { toast } from "react-toastify";
 
 const App = () => {
   const [todos, settodos] = useState(() => {
@@ -30,6 +31,7 @@ const App = () => {
     settodos([...todos, newtodo]);
     settitle("");
     setError("");
+    toast.success("Created")
   };
 
   const toggleCompleted = (id) => {
@@ -42,10 +44,12 @@ const App = () => {
 
   const deleteAll = () => {
     settodos([])
+    toast.error("All deleted")
   }
 
   const deleteTodo = (id) => {
     settodos(todos.filter((todo) => todo.id !== id));  //jo jo match nahi  karta hai  usko store  karo
+    toast.error("Delete")
   };
 
   return (
